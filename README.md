@@ -11,7 +11,7 @@ A text editor is a software application that can create and edit text files, suc
 
 free for everyone to use in any good purposes.
 
-## ENROLL FORM
+## PAGE AND ENROLL FORM
 
 ![TSW1](https://github.com/20R01A05D6/Technical_Courses_Website/assets/122285082/83853e81-0997-41dd-97e9-41487457af7d)
 
