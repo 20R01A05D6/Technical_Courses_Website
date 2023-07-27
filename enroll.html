@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENROLL FORM</title>
+    <link rel="stylesheet" href="R:\5d7 project\style1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 class="text-center font-weight-bold" style="font-size: 40px;">ENROLL YOUR COURSE</h1>
+
+    <center>
+        <div class="container">
+            <br />
+            <div class="col-sm-6 m-auto">
+                <form action="R:\5d7 project\enroll1.html" onsubmit="return validation()" class="bg-light">
+                    <div class="form-group">
+                        <label class="font-weight-regular"> Course </label>
+                        <select name="" id="">
+                            <Option>C</Option>
+                            <Option>C++</Option>
+                            <Option>Java</Option>
+                            <Option>Python</Option>
+                            <Option>HTML/CSS/Java Script</Option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-regular"> Name </label>
+                        <input type="text" name="name" class="form-control" id="name" autocomplete="off" />
+                        <span id="Name" class="text-danger font-weight-regular"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-regular"> Email </label>
+                        <input type="text" name="email" class="form-control" id="email" autocomplete="off" />
+                        <span id="Email" class="text-danger font-weight-regular"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-regular"> Username </label>
+                        <input type="text" name="user" class="form-control" id="user" autocomplete="off" />
+                        <span id="User" class="text-danger font-weight-regular"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-regular"> Password </label>
+                        <input type="password" name="pass" class="form-control" id="pass" autocomplete="off" />
+                        <span id="Pass" class="text-danger font-weight-regular"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-regular"> Mobile Number </label>
+                        <input type="text" name="mobile" class="form-control" id="mobile" autocomplete="off" />
+                        <span id="Mobile" class="text-danger font-weight-regular"></span>
+                    </div>
+
+                    <input type="submit" name="enroll" value="Enroll" class="btn btn-primary" autocomplete="off" />
+                    <input type="reset" name="reset" value="Reset" class="btn btn-secondary" autocomplete="off" />
+                </form>
+                <br /><br />
+            </div>
+        </div>
+        <script type="text/javascript">
+            function validation() {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var user = document.getElementById("user").value;
+                var pass = document.getElementById("pass").value;
+                var mobile = document.getElementById("mobile").value;
+
+                if (name == "") {
+                    document.getElementById("Name").innerHTML = " ** Please fill the Name field";
+                    document.getElementById("Email").innerHTML = "";
+                    document.getElementById("User").innerHTML = "";
+                    document.getElementById("Pass").innerHTML = "";
+                    document.getElementById("Mobile").innerHTML = "";
+                    return false;
+                }
+                if (email == "") {
+                    document.getElementById("Email").innerHTML = " ** Please fill the email id field";
+                    document.getElementById("Name").innerHTML = "";
+                    document.getElementById("User").innerHTML = "";
+                    document.getElementById("Pass").innerHTML = "";
+                    document.getElementById("Mobile").innerHTML = "";
+                    return false;
+                }
+                if (email.indexOf("@") <= 0) {
+                    document.getElementById("Email").innerHTML = "** Invalid Email";
+                    document.getElementById("Name").innerHTML = "";
+                    document.getElementById("User").innerHTML = "";
+                    document.getElementById("Pass").innerHTML = "";
+                    document.getElementById("Mobile").innerHTML = "";
+                    return false;
+                }
+                if (email.charAt(email.length - 4) != "." &&
+                    email.charAt(email.length - 3) != ".") {
+                    document.getElementById("Email").innerHTML = " ** Invalid Email";
+                    document.getElementById("Name").innerHTML = "";
+                    document.getElementById("User").innerHTML = "";
+                    document.getElementById("Pass").innerHTML = "";
+                    document.getElementById("Mobile").innerHTML = "";
+                    return false;
+                }
+                if (user == "") {
+                    document.getElementById("User").innerHTML = " ** Please fill the User field";
+                    document.getElementById("Name").innerHTML = "";
+                    document.getElementById("Email").innerHTML = "";
+                    document.getElementById("Pass").innerHTML = "";
+                    document.getElementById("Mobile").innerHTML = "";
+                    return false;
+                }
+                if (user.length <= 3 || user.length > 20) {
+                    document.getElementById("User").innerHTML = " ** Username length must be between 3 and 20";
+                    document.getElementById("Name").innerHTML = "";
+                    document.getElementById("Email").innerHTML = "";
+                    document.getElementById("Pass").innerHTML = "";
+                    document.getElementById("Mobile").innerHTML = "";
+                    return false;
+                }
+                if (!isNaN(user)) {
+                    document.getElementById("User").innerHTML = " ** only characters are allowed";
+                    document.getElementById("Name").innerHTML = "";
+                    document.getElementById("Email").innerHTML = "";
+                    document.getElementById("Pass").innerHTML = "";
+                    document.getElementById("Mobile").innerHTML = "";
+                    return false;
+                }
+                if (pass == "") {
+                    document.getElementById("Pass").innerHTML = " ** Please fill the password field";
+                    document.getElementById("Name").innerHTML = "";
+                    document.getElementById("Email").innerHTML = "";
+                    document.getElementById("User").innerHTML = "";
+                    document.getElementById("Mobile").innerHTML = "";
+                    return false;
+                }
+                if (pass.length <= 5 || pass.length > 20) {
+                    document.getElementById("User").innerHTML = " ** Password length must be between 5 and 20";
+                    document.getElementById("Name").innerHTML = "";
+                    document.getElementById("Email").innerHTML = "";
+                    document.getElementById("User").innerHTML = "";
+                    document.getElementById("Mobile").innerHTML = "";
+                    return false;
+                }
+                if (mobile == "") {
+                    document.getElementById("Mobile").innerHTML = " ** Please fill the mobile Number field";
+                    document.getElementById("Name").innerHTML = "";
+                    document.getElementById("Email").innerHTML = "";
+                    document.getElementById("User").innerHTML = "";
+                    document.getElementById("Pass").innerHTML = "";
+                    return false;
+                }
+                if (isNaN(mobile)) {
+                    document.getElementById("Mobile").innerHTML = " ** user must write digits only not characters";
+                    document.getElementById("Name").innerHTML = "";
+                    document.getElementById("Email").innerHTML = "";
+                    document.getElementById("User").innerHTML = "";
+                    document.getElementById("Pass").innerHTML = "";
+                    return false;
+                }
+                if (mobile.length != 10) {
+                    document.getElementById("Mobile").innerHTML = " ** Mobile Number be 10 digits only";
+                    document.getElementById("Name").innerHTML = "";
+                    document.getElementById("Email").innerHTML = "";
+                    document.getElementById("User").innerHTML = "";
+                    document.getElementById("Pass").innerHTML = "";
+                    return false;
+                }
+            }
+        </script>
+    </center>
+</body>
+
+</html>
